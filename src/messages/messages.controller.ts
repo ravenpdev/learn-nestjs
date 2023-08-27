@@ -29,8 +29,6 @@ export class MessagesController {
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const message = await this.messageService.findOne(id);
-
-    console.log(message);
     if (!message) {
       throw new NotFoundException('message not found!');
     }
